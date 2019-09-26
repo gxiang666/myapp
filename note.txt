@@ -6,11 +6,12 @@
     npm install
 3.修改默认视图引擎为HTML
     (1).引入ejs
-    var ejs = require('ejs');
+        var ejs = require('ejs');
     (2).修改配置
-    // app.set('view engine', 'ejs');
-    app.engine('.html', ejs.__express) // 设置视图引擎后缀，为.html
-    app.set('view engine', 'html'); // 设置视图引擎为html
+        // app.set('view engine', 'ejs');
+        app.engine('.html', ejs.__express) // 设置视图引擎后缀，为.html
+        app.set('view engine', 'html'); // 设置视图引擎为html
+    (3).修改views文件下的文件后缀为.html
 4.启动此应用
     (1) set DEBUG=myapp:* & npm start
     (2) npm start

@@ -12,10 +12,12 @@ var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
+// 修改视图引擎为HTML
 // app.set('view engine', 'ejs');
 app.engine('.html', ejs.__express) // 设置视图引擎后缀，为.html
 app.set('view engine', 'html'); // 设置视图引擎为html
 
+// 挂载中间件
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -24,6 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use("/main", indexRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
