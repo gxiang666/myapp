@@ -1,0 +1,16 @@
+1.生成项目骨架
+    npm install express-generator -g
+    express --view=ejs myapp
+2.然后安装所有依赖包：
+    cd myapp
+    npm install
+3.修改默认视图引擎为HTML
+    (1).引入ejs
+    var ejs = require('ejs');
+    (2).修改配置
+    // app.set('view engine', 'ejs');
+    app.engine('.html', ejs.__express) // 设置视图引擎后缀，为.html
+    app.set('view engine', 'html'); // 设置视图引擎为html
+4.启动此应用
+    (1) set DEBUG=myapp:* & npm start
+    (2) npm start
